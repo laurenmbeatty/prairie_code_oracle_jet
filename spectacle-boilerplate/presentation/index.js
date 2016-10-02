@@ -112,49 +112,71 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide transition={["spin", "zoom"]} bgColor="tertiary">
             <Heading caps fit size={1} textColor="primary">
-              Inline Markdown
+              Knockout
             </Heading>
-            <Markdown>
-              {`
-![Markdown Logo](${images.markdown.replace("/", "")})
-
-You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-* Lists too!
-* With ~~strikethrough~~ and _italic_
-* And lets not forget **bold**
-              `}
-            </Markdown>
+            <List>
+              <Appear><ListItem>2-way data binding: Model View View-Model</ListItem></Appear>
+              <Appear><ListItem>Automatic UI refresh</ListItem></Appear>
+              <Appear><ListItem>Straightforward, readable syntax</ListItem></Appear>
+            </List>
           </Slide>
           <Slide transition={["slide", "spin"]} bgColor="primary">
             <Heading caps fit size={1} textColor="tertiary">
-              Smooth
+              View Model
             </Heading>
-            <Heading caps fit size={1} textColor="secondary">
-              Combinable Transitions
-            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/viewmodel.example")}
+              margin="20px auto"
+            />
           </Slide>
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-            <List>
-              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit text</ListItem></Appear>
-              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-              <Appear><ListItem>React-Router navigation</ListItem></Appear>
-              <Appear><ListItem>PDF export</ListItem></Appear>
-              <Appear><ListItem>And...</ListItem></Appear>
-            </List>
+          <Slide transition={["fade"]} bgColor="primary" textColor="white">
+            <Heading caps fit size={1} textColor="tertiary">
+              The View
+            </Heading>
+            <CodePane
+              lang="html"
+              source={require("raw!../assets/view.example")}
+              margin="20px auto"
+            />
           </Slide>
           <Slide transition={["slide"]} bgColor="primary">
             <Heading size={1} caps fit textColor="tertiary">
-              Your presentations are interactive
+              RequireJS
             </Heading>
-            <Interactive/>
+            <List>
+              <Appear><ListItem>JavaScript file and module loader</ListItem></Appear>
+              <Appear><ListItem>Loads only the files and modules needed</ListItem></Appear>
+              <Appear><ListItem>As applications get larger, loading of resources gets complicated</ListItem></Appear>
+              <Appear><ListItem>Improves speed an quality of code</ListItem></Appear>
+              <Appear><ListItem>Essentially: loads your modules and files only when needed!</ListItem></Appear>
+            </List>
           </Slide>
-          <Slide transition={["spin", "slide"]} bgColor="tertiary">
-            <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
-              Made with love in Seattle by
+          <Slide transition={["spin", "slide"]} bgColor="primary">
+            <Heading size={1} caps fit lineHeight={1.5} textColor="tertiary">
+              RequireJS Configuration
             </Heading>
-            <Link href="http://www.formidablelabs.com"><Image width="100%" src={images.logo}/></Link>
-          </Slide>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/requireconfig.example")}
+              margin="20px auto"
+            />
+        </Slide>
+        <Slide transition={["spin", "slide"]} bgColor="primary">
+          <Heading size={1} caps fit lineHeight={1.5} textColor="tertiary">
+            Top-Level Require Block
+          </Heading>
+          <CodePane
+            lang="js"
+            source={require("raw!../assets/requireblock.example")}
+            margin="20px auto"
+          />
+        <List textColor="tertiary">
+          <Appear><ListItem>In main.js</ListItem></Appear>
+          <Appear><ListItem>In viewModel files, require block becomes a define block</ListItem></Appear>
+          <Appear><ListItem>Loads components needed to start application</ListItem></Appear>
+        </List>
+      </Slide>
         </Deck>
       </Spectacle>
     );

@@ -1,0 +1,8 @@
+require(['ojs/ojcore', 'knockout', 'jquery',
+          'promise', 'ojs/ojknockout', 'ojs/ojrouter',
+          'ojs/ojmodule', 'ojs/ojoffcanvas', 'ojs/ojnavigationlist'],
+
+        function() {
+            console.log("Router code goes here!");
+
+});

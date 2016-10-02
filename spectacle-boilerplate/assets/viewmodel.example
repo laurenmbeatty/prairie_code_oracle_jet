@@ -1,0 +1,10 @@
+function chartModel() {
+  var self = this;
+  self.threeDValue = ko.observable('off');
+
+  var pieSeries = [{name: "jQuery", items: [20]},
+                   {name: "jQueryUI", items: [10]},
+                   {name: "KnockoutJS", items: [30]}];
+
+  self.pieSeriesValue = ko.observableArray(pieSeries);
+};
